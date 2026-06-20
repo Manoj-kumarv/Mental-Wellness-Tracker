@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Environment files (NEVER commit secrets)
+.env
+.env.local
+.env.production
+backend/.env
+frontend/.env.local
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Service account keys (NEVER commit)
+*.json
+!package.json
+!tsconfig*.json
+!firebase.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.tar
+
+# Logs
+*.log
+logs/
+
+# Coverage
+coverage/
+.coverage
+htmlcov/

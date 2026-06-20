@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #f8faf8;
+    color: #1e3421;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Accessibility: visible focus indicators */
+  *:focus-visible {
+    outline: 2px solid #4a7a4d;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Skip to main content link for screen readers */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 8px;
+    padding: 8px 16px;
+    background: #4a7a4d;
+    color: white;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    z-index: 9999;
+    transition: top 0.2s;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f4f7f4;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #9ab99c;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-sage-600 hover:bg-sage-700 text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-sage-50 hover:bg-sage-100 text-sage-700 font-medium px-6 py-3 rounded-xl border border-sage-200 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-500 focus-visible:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply text-sage-600 hover:text-sage-800 hover:bg-sage-50 font-medium px-4 py-2 rounded-lg transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-sage-200 rounded-xl text-sage-900 placeholder-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-sage-100 p-6;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-md hover:border-sage-200 transition-all duration-200 cursor-pointer;
+  }
+
+  .mood-chip {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
